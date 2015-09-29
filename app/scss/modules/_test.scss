@@ -1,0 +1,9 @@
+$padding: 160px;
+
+.myClass{
+	background: green;
+	padding-left: $padding;
+	&.container{
+		background-color: pink;
+	}
+}

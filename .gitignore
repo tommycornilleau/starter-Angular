@@ -1,0 +1,12 @@
+.DS_Store
+.sass-cache
+/npm-debug.log
+/.vagrant
+/node_modules
+/bower_components
+/npm-debug.log
+/puphpet/files
+/puphpet/puppet
+/puphpet/ruby
+/puphpet/shell
+/puphpet/vagrant
