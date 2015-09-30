@@ -2,8 +2,7 @@
 .sass-cache
 /npm-debug.log
 /.vagrant
-/node_modules
-/bower_components
+/.node_modules
 /npm-debug.log
 /puphpet/files
 /puphpet/puppet
