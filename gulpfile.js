@@ -24,7 +24,8 @@ var prod = './dist';
 // Tâche "css" = LESS + autoprefixer + unCSS + minify
 gulp.task('css', function() {
   return gulp.src(source + '/scss/**/*.scss')
-    .pipe(sass().on('error', sass.logError))
+    // .pipe(sass().on('error', sass.logError))
+    .pipe(sass())
     .pipe(autoprefixer({
           browsers: ['last 2 versions'],
       }))
