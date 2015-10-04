@@ -1,9 +1,10 @@
 $padding: 160px;
 
-.myClass{
+.myDiv{
 	background: green;
 	padding-left: $padding;
 	&.container{
 		background-color: pink;
+		font-family: comic san;
 	}
 }

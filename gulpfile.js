@@ -5,9 +5,11 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var minify = require('gulp-minify-css');
 var autoprefixer = require('gulp-autoprefixer');
-var browserSync = require('browser-sync').create();
 var jshint = require('gulp-jshint');
 var jscs = require('gulp-jscs');
+var livereload = require('gulp-livereload');
+var clean = require('gulp-clean');
+// var browserSync = require('browser-sync').create();
 // var uglify = require('gulp-uglify');
 // var reload = browserSync.reload;
 // var concat = require('gulp-concat');
@@ -40,19 +42,33 @@ gulp.task('css', function() {
 	.pipe(autoprefixer({
 		browsers: ['last 2 versions'],
 	}))
+	.pipe(livereload())
 	.pipe(minify())
 	.pipe(gulp.dest(distPath.css));
-	// .pipe(browserSync.stream());
 });
 
+gulp.task('clean', function(){
+	return gulp.src(distDirectory, {read: false})
+	.pipe(clean());
+});
 
-
-
-gulp.task('browser-sync', function() {
-	browserSync.init({
-		proxy: 'local.dev'
+gulp.task('watch', function(){
+	var server = livereload();
+	gulp.watch(sourcePath.scss, ['css']);
+	gulp.watch(sourcePath.js, ['js']);
+	gulp.watch(sourcePath.other, ['copy']);
+	gulp.watch([sourceDirectory + '/**']).on('change', function(event) {
+		livereload();
 	});
 });
+
+
+
+// gulp.task('browser-sync', function() {
+// 	browserSync.init({
+// 		server: 'local.dev'
+// 	});
+// });
 
 
 // Tâche "js" = uglify + concat
@@ -68,7 +84,6 @@ gulp.task('js', function() {
 	.pipe(jscs())
 	.pipe(jscs.reporter('jscs checking'))
 	.pipe(gulp.dest(distPath.js));
-	// .pipe(browserSync.stream());
 });
 
 gulp.task('copy', function() {
@@ -76,10 +91,6 @@ gulp.task('copy', function() {
 		base: sourceDirectory
 	})
 	.pipe(gulp.dest(distPath.other));
-		// .pipe(reload({
-		//   stream: true,
-		//   once: true
-		// }));
 });
 
 // // Tâche "watch" = je surveille LESS et HTML
