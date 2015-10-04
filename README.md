@@ -44,7 +44,7 @@
 	- in cmd enter the command ```npm update -g``` to update packages
 	- in cmd enter the command ```npm install``` to install packages
 * in cmd enter the command ```gulp``` in project directory
-* Access it through **http://local.dev/**
+* Access it through **http://local.dev/dist**
 * run LiveReload software 
 * Enable LiveReload chrome extension
 
@@ -59,7 +59,7 @@
 ## Run project locally
 * in cmd enter the command ```vagrant up``` in project directory
 * in cmd enter the command ```gulp watch``` in project directory
-* Access it through [http://local.dev/](http://local.dev/)
+* Access it through [http://local.dev/dist](http://local.dev/)
 * run LiveReload software 
 * Enable LiveReload chrome extension
 
