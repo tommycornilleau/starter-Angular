@@ -107,4 +107,4 @@ gulp.task('copy', function() {
 // });
 
 // Default task
-gulp.task('prod', ['css', 'browser-sync', 'js', 'copy']);
+gulp.task('dafault', ['css', 'browser-sync', 'js', 'copy']);
