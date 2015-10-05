@@ -1,0 +1,55 @@
+html {
+	height: 100%;
+	box-sizing: border-box;
+	letter-spacing: 1px;;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	height: 100%;
+	background: black;
+	overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-weight: normal;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+img {
+	display: block;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+button {
+	padding: 0;
+	border: 0;
+	outline: 0;
+	background: 0;
+	letter-spacing: inherit;
+	-webkit-font-smoothing: inherit;
+	-moz-osx-font-smoothing: inherit;
+}
+
+*,
+*:before,
+*:after,
+input[type="search"] {
+	box-sizing: inherit;
+}
+
+:not(input)::selection {
+	text-shadow: none;
+}
