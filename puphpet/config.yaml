@@ -367,4 +367,3 @@ solr:
     settings:
         version: 4.10.2
         port: '8984'
-
