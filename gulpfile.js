@@ -34,6 +34,7 @@ var distPath = {
 	other: distDirectory
 };
 
+
 // Tâche "css" = LESS + autoprefixer + unCSS + minify
 gulp.task('css', function() {
 	return gulp.src(sourcePath.scss)
@@ -49,8 +50,6 @@ gulp.task('css', function() {
 // Tâche "js" = uglify + concat
 gulp.task('js', function() {
 	return gulp.src(sourcePath.js)
-	// .pipe(uglify())
-	// .pipe(concat('global.min.js'))
 	.pipe(jscs())
 	.pipe(jscs.reporter())
 	.pipe(jshint())
