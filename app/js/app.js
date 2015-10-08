@@ -1,7 +1,9 @@
 'use strict';
 
+var angular = angular;
+
 angular.module('app', ['ngRoute', 'main']).
-config(function($routeProvider, $sceDelegateProvider) {
+config(function($routeProvider) {
 	$routeProvider.when('/projects', { templateUrl: 'partials/projects.html' });
 	$routeProvider.when('/project/:name', { templateUrl: 'partials/single.html', controller: 'WorkoutController' });
 	$routeProvider.when('/about', { templateUrl: 'partials/about.html' });
